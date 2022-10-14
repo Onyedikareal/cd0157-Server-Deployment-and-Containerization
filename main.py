@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 """
 A simple app to create a JWT token.
-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
 """
 import os
 import logging
