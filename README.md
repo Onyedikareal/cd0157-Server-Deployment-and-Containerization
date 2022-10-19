@@ -1,8 +1,6 @@
 # Deploying a Flask API
 
-This is the project starter repo for the course Server Deployment, Containerization, and Testing.
-
-In this project you will containerize and deploy a Flask API to a Kubernetes cluster using Docker, AWS EKS, CodePipeline, and CodeBuild.
+In this project I containerize and deploy a Flask API to a Kubernetes cluster using Docker, AWS EKS, CodePipeline, and CodeBuild.
 
 The Flask app that will be used for this project consists of a simple API with three endpoints:
 
@@ -10,14 +8,14 @@ The Flask app that will be used for this project consists of a simple API with t
 - `POST '/auth'`: This takes a email and password as json arguments and returns a JWT based on a custom secret.
 - `GET '/contents'`: This requires a valid JWT, and returns the un-encrpyted contents of that token. 
 
-The app relies on a secret set as the environment variable `JWT_SECRET` to produce a JWT. The built-in Flask server is adequate for local development, but not production, so you will be using the production-ready [Gunicorn](https://gunicorn.org/) server when deploying the app.
+The app relies on a secret set as the environment variable `JWT_SECRET` to produce a JWT. The built-in Flask server is adequate for local development, but not production, so production-ready [Gunicorn](https://gunicorn.org/) server was used when deploying the app.
 
 
 
 ## Prerequisites
 
 * Docker Desktop - Installation instructions for all OSes can be found <a href="https://docs.docker.com/install/" target="_blank">here</a>.
-* Git: <a href="https://git-scm.com/downloads" target="_blank">Download and install Git</a> for your system. 
+* Git: <a href="https://git-scm.com/downloads" target="_blank">Download and install Git</a>. 
 * Code editor: You can <a href="https://code.visualstudio.com/download" target="_blank">download and install VS code</a> here.
 * AWS Account
 * Python version between 3.7 and 3.9. Check the current version using:
@@ -49,13 +47,6 @@ python -m pip install --upgrade pip==20.2.3
   * The KUBECTL installed in your system. Installation instructions for kubectl can be found <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_blank">here</a>. 
 
 
-## Initial setup
-
-1. Fork the <a href="https://github.com/udacity/cd0157-Server-Deployment-and-Containerization" target="_blank">Server and Deployment Containerization Github repo</a> to your Github account.
-1. Locally clone your forked version to begin working on the project.
-```bash
-git clone https://github.com/SudKul/cd0157-Server-Deployment-and-Containerization.git
-cd cd0157-Server-Deployment-and-Containerization/
 ```
 1. These are the files relevant for the current project:
 ```bash
@@ -76,7 +67,7 @@ cd cd0157-Server-Deployment-and-Containerization/
      
 ## Project Steps
 
-Completing the project involves several steps:
+The project involves completing the following several steps:
 
 1. Write a Dockerfile for a simple Flask API
 2. Build and test the container locally
@@ -85,4 +76,3 @@ Completing the project involves several steps:
 5. Create a CodePipeline pipeline triggered by GitHub checkins
 6. Create a CodeBuild stage which will build, test, and deploy your code
 
-For more detail about each of these steps, see the project lesson.
